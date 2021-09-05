@@ -84,21 +84,32 @@ var lowerCasedCharacters = [
   "z",
 ];
 
-//Click button to promp alert to action
+//Click button to promp action
 
 var generateBtn = document.getElementById("generate");
 
 generateBtn.onclick = function () {
   var length = passwordLenght();
-  var lowerCase = lowerCa();
-  var upperCase = upperCa();
-  var numspeCar = numAndSpec();
   if (length) {
-    console.log(length);
-    console.log(lowerCase);
-    console.log(upperCase);
-    console.log(numspeCar);
+    var lowerCase = lowerCa();
+    var upperCase = upperCa();
+    var numChac = numChrts();
+    var specChac = specChrts();
+    console.log(length, lowerCase, upperCase, numChac, specChac);
+    validation();
   } else {
+    return;
+  }
+};
+
+//Validate: at least one character type should be selected
+validation = function () {
+  if (!lowerCase && !upperCase) {
+    if (!numChac && !specChac) {
+      window.alert(
+        "You must select at least one criteria:\nLowercase\nUppercase\nNumeric characters\nSpecial characters"
+      );
+    }
     return;
   }
 };
@@ -150,18 +161,28 @@ upperCa = function () {
 };
 
 //  Selection of characters:
-//    Criteria: include numeric and/or special character
-numAndSpec = function () {
-  var numSpec = confirm(
-    "Do you want your password to have numeric and/or special characters?"
+//    Criteria: include numeric characters
+numChrts = function () {
+  var numerCh = confirm(
+    "Do you want your password to have numeric characters?"
   );
-  if (numSpec) {
+  if (numerCh) {
     return true;
   } else {
     return false;
   }
 };
 
-//4. Validate: at least one character type should be selected
+//  Selection of characters:
+//    Criteria: include special characters
+specChrts = function () {
+  var SpecCh = confirm("Do you want your password to have special characters?");
+  if (SpecCh) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 //5. Password matches the criteria and is generated
-//6. Passwords shows in HTML
+//6. Passwords shows in
