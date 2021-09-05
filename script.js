@@ -1,19 +1,115 @@
-//Steps for development:
-// 1. click button to promp alert to action
+var specialCharacters = [
+  "@",
+  "%",
+  "+",
+  "\\",
+  "/",
+  "'",
+  "!",
+  "#",
+  "$",
+  "^",
+  "?",
+  ":",
+  ",",
+  ")",
+  "(",
+  "}",
+  "{",
+  "]",
+  "[",
+  "~",
+  "-",
+  "_",
+  ".",
+];
 
-var generateBtn = document.getElementById("#generate");
+var numericCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-generateBtn = function () {
-  numCharacters = window.prompt(
-    "How many characters do you want touy password to be?"
-  );
-  numCharacters = console.log(
-    "How many characters do you want touy password to be?"
-  );
+var lowerCasedCharacters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+var lowerCasedCharacters = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+
+//Click button to promp alert to action
+
+var generateBtn = document.getElementById("generate");
+
+generateBtn.onclick = function () {
+  passwordLenght();
 };
 
-// 2. Selection of the lenght of the passowrds
+// Selection of the lenght of the passowrds
 //    Criteria: at leat 8 characters no more then 182 charactes
+
+passwordLenght = function () {
+  window.prompt(
+    "How many characters do you want your password to be?\n(Please select between 8 and 182"
+  );
+
+  if (passwordLenght != numericCharacters) {
+    return window.prompt("Please only type numeric characters");
+  } else if (passwordLenght < 8 || passwordLenght > 182) {
+    return window.prompt(
+      "Password must have a lenght of between 8 and 182 characters"
+    );
+  } else {
+  }
+};
+
 // 3. Selection of characters:
 //    Criteria: inlcude/note include: lowercase, uppercase, numeric, and/or special character
 //4. Validate: at least one character type should be selected
