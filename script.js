@@ -121,7 +121,7 @@ generateBtn.addEventListener("click", function () {
       // Loop to create finalPassword (random characters from passwordCriteria)
       for (var i = 0; i < passLength; i++) {
         var abc = Math.floor(Math.random() * passwordCriteria.length);
-        finalPassword += passwordCriteria.substring(abc, abc + 1);
+        finalPassword += passwordCriteria.substring(abc);
         console.log(finalPassword);
       }
       securePassword.textContent = finalPassword;
