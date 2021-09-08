@@ -123,9 +123,9 @@ generateBtn.addEventListener("click", function () {
       for (var i = 0; i < passLength; i++) {
         var randomNum = Math.floor(Math.random() * passwordCriteria.length);
         finalPassword += passwordCriteria.slice(randomNum, randomNum + 1);
-        console.log(randomNum);
         console.log(finalPassword);
       }
+      // append password to HTML
       securePassword.textContent = finalPassword;
     }
   } else {
