@@ -84,6 +84,7 @@ var lowerCasedCharacters = [
   "z",
 ];
 
+console.log(lowerCasedCharacters);
 var finalPassword = "";
 
 //Click button to promp action
@@ -103,7 +104,7 @@ generateBtn.addEventListener("click", function () {
 
     if (isValid) {
       // Selection of true criterias/adding objects to passwordCriteria var
-      var passwordCriteria = "";
+      var passwordCriteria = [];
       if (lowerCase) {
         passwordCriteria = passwordCriteria.concat(lowerCasedCharacters);
       }
@@ -120,8 +121,9 @@ generateBtn.addEventListener("click", function () {
       console.log(passLength);
       // Loop to create finalPassword (random characters from passwordCriteria)
       for (var i = 0; i < passLength; i++) {
-        var abc = Math.floor(Math.random() * passwordCriteria.length);
-        finalPassword += passwordCriteria.substring(abc);
+        var randomNum = Math.floor(Math.random() * passwordCriteria.length);
+        finalPassword += passwordCriteria.slice(randomNum, randomNum + 1);
+        console.log(randomNum);
         console.log(finalPassword);
       }
       securePassword.textContent = finalPassword;
